@@ -34,7 +34,7 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/meeple-noBG.png" alt="logo" />
-            <p class="title">Supabase Web App</p>
+            <p class="title">Add Game</p>
             <nav>
                 <a href="../">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -42,22 +42,128 @@
         </header>
 
         <main>
-            <section class="form">
-                <h2>Title</h2>
-                <input id="title" required placeholder="Game Title" />
-                <div class="min-players">
-                    <h3>Min Players</h3>
-                    <input id="min-players" required size="10" />
-                </div>
-                <div class="max-players">
-                    <h3>Max Players</h3>
-                    <input id="max-players" required size="10" />
-                </div>
-                <h3>Time to play</h3>
-                <select id="time">
-                    <option>0-10 minutes</option>
-                </select>
-            </section>
+            <form>
+                <section class="form">
+                    <!-- Title Section -->
+                    <h3>Title</h3>
+                    <input id="title" required placeholder="Game Title" />
+                    <!-- Min/Max Players -->
+                    <div class="min-players">
+                        <h3>Min Players</h3>
+                        <input id="min-players" required size="10" />
+                    </div>
+                    <div class="max-players">
+                        <h3>Max Players</h3>
+                        <input id="max-players" required size="10" />
+                    </div>
+                    <!-- Time To Play -->
+                    <h3>Time to play</h3>
+                    <select id="time">
+                        <option value="under-10">0-10 minutes</option>
+                        <option value="10-30">10-30 minutes</option>
+                        <option value="30-60">30 minutes - 1 hour</option>
+                        <option value="60-90">1 hour - 1.5 hours</option>
+                        <option value="90-120">1.5 hours - 2 hours</option>
+                        <option value="120-plus">2 hours or longer</option>
+                    </select>
+                    <!-- Difficulty/Complexity -->
+                    <h3>Complexity</h3>
+                    <select id="complexity">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="extreme">Extreme</option>
+                    </select>
+                    <!-- Rules link input -->
+                    <h3>Link to rules</h3>
+                    <input id="rules-link" placeholder="Place link to game rules (optional)" />
+                    <!-- Game typ radio buttons -->
+                    <div class="game-type">
+                        <h3>Game Type</h3>
+
+                        <input type="checkbox" id="deck-builder" value="deck-builder" />
+                        <label for="deck-builder">Deck Builder</label>
+
+                        <input type="checkbox" id="roll-and-write" value="roll-and-write" />
+                        <label for="roll-and-write">roll-and-write</label>
+
+                        <input type="checkbox" id="worker-placement" value="worker-placement" />
+                        <label for="worker-placement">Worker Placement</label>
+
+                        <input
+                            type="checkbox"
+                            id="resource-management"
+                            value="resource-management"
+                        />
+                        <label for="resource-management">Resource Management</label>
+
+                        <input type="checkbox" id="drafting" value="drafting" />
+                        <label for="drafting">Drafting</label>
+
+                        <input type="checkbox" id="tile-placement" value="tile-placement" />
+                        <label for="tile-placement">Tile Placement</label>
+
+                        <input type="checkbox" id="set-collection" value="set-collection" />
+                        <label for="set-collection">Set Collection</label>
+
+                        <input type="checkbox" id="secret-identity" value="secret-identity" />
+                        <label for="secret-identity">Secret Identity</label>
+
+                        <input type="checkbox" id="party-game" value="party-game" />
+                        <label for="party-game">Party Game</label>
+
+                        <input type="checkbox" id="hand-management" value="hand-management" />
+                        <label for="hand-management">Hand Management</label>
+
+                        <input type="checkbox" id="area-control" value="area-control" />
+                        <label for="area-control">Area Control</label>
+
+                        <input type="checkbox" id="drawing" value="drawing" />
+                        <label for="drawing">Drawing</label>
+
+                        <input type="checkbox" id="dice-rolling" value="dice-rolling" />
+                        <label for="dice-rolling">Dice Rolling</label>
+
+                        <input type="checkbox" id="modular-set-up" value="modular-set-up" />
+                        <label for="modular-set-up">Modular Set Up</label>
+
+                        <input type="checkbox" id="games-of-chance" value="games-of-chance" />
+                        <label for="games-of-chance">Games of Chance</label>
+
+                        <input type="checkbox" id="realtime" value="realtime" />
+                        <label for="realtime">Realtime</label>
+
+                        <input type="checkbox" id="rpg" value="rpg" />
+                        <label for="rpg">RPG</label>
+                    </div>
+                    <!-- Aesthetic List and dropdown -->
+                    <h3>Game Aesthetic</h3>
+                    <select id="aesthetic">
+                        <option value="spooky">Spooky</option>
+                        <option value="zen">Zen</option>
+                        <option value="medieval">Medieval</option>
+                        <option value="food">Food</option>
+                        <option value="horror">Horror</option>
+                        <option value="femme-weeb-nonsense">Femme Weeb Nonsense</option>
+                        <option value="masc weeb nonsense">Masc Weeb Nonsense</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="space">Space</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="western">Western</option>
+                        <option value="classic">Classic</option>
+                        <option value="animals">Animals</option>
+                        <option value="children">Children</option>
+                        <option value="dnd">DnD</option>
+                    </select>
+                    <!-- Image Upload Area -->
+                    <div class="image-area">
+                        <input type="file" />
+                        <img src="../assets/meeple.png" alt="" class="preview" />
+                    </div>
+                    <!-- Submit button -->
+                    <button id="submit">Submit</button>
+                </section>
+            </form>
         </main>
     </body>
 </html>
