@@ -9,10 +9,10 @@
 
     <!-- title and favicon -->
     <title>Supabase Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/assets/meeple.png" />
 
     <!-- js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
     <script type="module" src="app.js"></script>
 
     <!-- fonts -->
@@ -31,15 +31,19 @@
 
 <body>
     <header class="page-header">
-        <img class="logo" src="/assets/html_css_js.png" alt="logo">
+        <img class="logo" src="/assets/meeple-noBG.png" alt="logo">
         <p class="title">Supabase Web App</p>
         <nav>
             <a href="/">Home</a>
             <a id="sign-out-link" href="auth">Sign Out</a>
+            <a href="/upsert-profile/index.html" id="upsert-profile">Edit Profile</a>
+            <a href="/profile/index.html" id="profile">My Profile</a>
+            <a href="/add-game/index.html" id="add-game">Add Game</a>
         </nav>
     </header>
 
     <main>
+        
 
     </main>
 
