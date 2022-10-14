@@ -1,0 +1,45 @@
+:root {
+    --background: white;
+    --header-background: #e0e1ea;
+    --text-color: #30302d;
+    --label-color: #0b385b;
+    --placeholder-color: #1a8ce2;
+    --offset-color: #d5f7ca;
+    --offborder-color: #51de22;
+    --action-color: #f2b705;
+    --gamecard-color: #facfc7;
+    --gamecard-border: #dc3613;
+    --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
+        'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
+}
+
+.library-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.gamecard {
+    text-decoration: none;
+    color: initial;
+    background: var(--gamecard-color);
+    border: 5px solid var(--gamecard-border);
+    box-shadow: 15px 15px var(--gamecard-border);
+    border-radius: 43px;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+.game-title {
+}
+
+.game-box {
+    width: 150px;
+    object-fit: contain;
+}
+
+.game-type {
+}
+
+.player-range {
+}

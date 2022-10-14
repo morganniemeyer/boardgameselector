@@ -28,6 +28,8 @@
         <!-- css -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/gamecard.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -44,10 +46,10 @@
         </header>
 
         <main>
-            <div id="user-display">
+            <div id="user-display" class="profile-display">
                 <h1 id="username-display" class="username-display">Userdude420</h1>
                 <p id="bio-display" class="bio-display">About Userdude420</p>
-
+                <img src="../assets/default.jpg" alt="" class="avatar-profile">
                 <div class="favorite-game">
                     <h1 class="game-title">favoriteGameName</h1>
                     <img class="game-box" src="" alt="image" />
@@ -55,9 +57,9 @@
                     <p class="player-range">players</p>
                 </div>
             </div>
-            <span class="all-games-banner">All Games List</span>
+            <div class="all-games-banner">All Games List</div>
             <div id="list-display">
-                <ul>
+                <ul class="library-cards">
                     <li class="gamecard">
                         <h1 class="game-title">GameName</h1>
                         <img class="game-box" src="" alt="image" />
