@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- title and favicon -->
-    <title>Supabase Web App</title>
+    <title>Update Your Profile</title>
     <link rel="icon" type="image/x-icon" href="/assets/meeple.png" />
 
     <!-- js -->
@@ -32,7 +32,7 @@
 <body>
     <header class="page-header">
         <img class="logo" src="/assets/meeple-noBG.png" alt="logo">
-        <p class="title">Supabase Web App</p>
+        <p class="title">Update Your Profile</p>
         <!-- <nav>
             <a href="../">Home</a>
             <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -40,7 +40,38 @@
     </header>
 
     <main>
+        <form id="profile-form">
+            <label>
+                <div>Username</div>
+                <input name="user_name" required placeholder="Create a username..." />
+            </label>
 
+            <label id="image-input">
+                <div>Avatar</div>
+                <div class="room-image-select">
+                    <input type="file" name="image"/>
+                    <img
+                        id="image-preview"
+                        src="../assets/default.jpg"
+                        class="avatar"
+                    />
+                </div>
+            </label>
+
+            <label>
+                <div>Bio</div>
+                <textarea name="bio" placeholder="About you..."></textarea>
+            </label>
+
+            <label>
+                <div>Favorite Game</div>
+                <textarea name="favorite" placeholder="What's your favorite?"></textarea>
+            </label>
+
+            <button id="update-button">Update Profile</button>
+
+            <p id="error-display"></p>
+        </form>
     </main>
 
 </body>
