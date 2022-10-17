@@ -28,6 +28,7 @@
         <!-- css -->
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/addgame.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -48,13 +49,15 @@
                     <h3>Title</h3>
                     <input id="title" required placeholder="Game Title" />
                     <!-- Min/Max Players -->
-                    <div class="min-players">
-                        <h3>Min Players</h3>
-                        <input id="min-players" required size="10" />
-                    </div>
-                    <div class="max-players">
-                        <h3>Max Players</h3>
-                        <input id="max-players" required size="10" />
+                    <div class="min-max">
+                        <div class="min-players">
+                            <h3>Min Players</h3>
+                            <input type="number" id="min-players" required />
+                        </div>
+                        <div class="max-players">
+                            <h3>Max Players</h3>
+                            <input type="number" id="max-players" required />
+                        </div>
                     </div>
                     <!-- Time To Play -->
                     <h3>Time to play</h3>
@@ -77,68 +80,174 @@
                     <!-- Rules link input -->
                     <h3>Link to rules</h3>
                     <input id="rules-link" placeholder="Place link to game rules (optional)" />
-                    <!-- Game typ radio buttons -->
+                    <!-- Game type radio buttons -->
+                    <h3>Game Type</h3>
                     <div class="game-type">
-                        <h3>Game Type</h3>
+                        <label for="deck-builder"
+                            >Deck Builder
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="deck-builder"
+                                value="deck-builder"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="deck-builder" value="deck-builder" />
-                        <label for="deck-builder">Deck Builder</label>
+                        <label for="roll-and-write"
+                            >Roll-and-Write
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="roll-and-write"
+                                value="roll-and-write"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="roll-and-write" value="roll-and-write" />
-                        <label for="roll-and-write">roll-and-write</label>
+                        <label for="worker-placement"
+                            >Worker Placement
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="worker-placement"
+                                value="worker-placement"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="worker-placement" value="worker-placement" />
-                        <label for="worker-placement">Worker Placement</label>
+                        <label for="resource-management"
+                            >Resource Management
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="resource-management"
+                                value="resource-management"
+                            />
+                        </label>
 
-                        <input
-                            type="checkbox"
-                            id="resource-management"
-                            value="resource-management"
-                        />
-                        <label for="resource-management">Resource Management</label>
+                        <label for="drafting"
+                            >Drafting
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="drafting"
+                                value="drafting"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="drafting" value="drafting" />
-                        <label for="drafting">Drafting</label>
+                        <label for="tile-placement"
+                            >Tile Placement
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="tile-placement"
+                                value="tile-placement"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="tile-placement" value="tile-placement" />
-                        <label for="tile-placement">Tile Placement</label>
+                        <label for="set-collection"
+                            >Set Collection
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="set-collection"
+                                value="set-collection"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="set-collection" value="set-collection" />
-                        <label for="set-collection">Set Collection</label>
+                        <label for="secret-identity"
+                            >Secret Identity
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="secret-identity"
+                                value="secret-identity"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="secret-identity" value="secret-identity" />
-                        <label for="secret-identity">Secret Identity</label>
+                        <label for="party-game"
+                            >Party Game
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="party-game"
+                                value="party-game"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="party-game" value="party-game" />
-                        <label for="party-game">Party Game</label>
+                        <label for="hand-management"
+                            >Hand Management
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="hand-management"
+                                value="hand-management"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="hand-management" value="hand-management" />
-                        <label for="hand-management">Hand Management</label>
+                        <label for="area-control"
+                            >Area Control
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="area-control"
+                                value="area-control"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="area-control" value="area-control" />
-                        <label for="area-control">Area Control</label>
+                        <label for="drawing"
+                            >Drawing
+                            <input type="checkbox" name="game-type" id="drawing" value="drawing" />
+                        </label>
 
-                        <input type="checkbox" id="drawing" value="drawing" />
-                        <label for="drawing">Drawing</label>
+                        <label for="dice-rolling"
+                            >Dice Rolling
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="dice-rolling"
+                                value="dice-rolling"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="dice-rolling" value="dice-rolling" />
-                        <label for="dice-rolling">Dice Rolling</label>
+                        <label for="modular-set-up"
+                            >Modular Set Up
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="modular-set-up"
+                                value="modular-set-up"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="modular-set-up" value="modular-set-up" />
-                        <label for="modular-set-up">Modular Set Up</label>
+                        <label for="games-of-chance"
+                            >Games of Chance
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="games-of-chance"
+                                value="games-of-chance"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="games-of-chance" value="games-of-chance" />
-                        <label for="games-of-chance">Games of Chance</label>
+                        <label for="realtime"
+                            >Realtime
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="realtime"
+                                value="realtime"
+                            />
+                        </label>
 
-                        <input type="checkbox" id="realtime" value="realtime" />
-                        <label for="realtime">Realtime</label>
-
-                        <input type="checkbox" id="rpg" value="rpg" />
-                        <label for="rpg">RPG</label>
+                        <label for="rpg"
+                            >RPG
+                            <input type="checkbox" name="game-type" id="rpg" value="rpg" />
+                        </label>
                     </div>
                     <!-- Aesthetic List and dropdown -->
+
                     <h3>Game Aesthetic</h3>
-                    <select id="aesthetic">
+
+                    <select id="aesthetic" class="aesthetic">
                         <option value="spooky">Spooky</option>
                         <option value="zen">Zen</option>
                         <option value="medieval">Medieval</option>
@@ -152,16 +261,19 @@
                         <option value="western">Western</option>
                         <option value="classic">Classic</option>
                         <option value="animals">Animals</option>
-                        <option value="children">Children</option>
+                        <option value="children">Children's</option>
                         <option value="dnd">DnD</option>
+                        <option value="zombie">Zombie</option>
+                        <option value="retro">Retro</option>
                     </select>
+
                     <!-- Image Upload Area -->
                     <div class="image-area">
                         <input type="file" />
-                        <img src="../assets/meeple.png" alt="" class="preview" />
                     </div>
+                    <img src="../assets/meeple.png" alt="" class="preview" />
                     <!-- Submit button -->
-                    <button id="submit">Submit</button>
+                    <button id="submit" class="submit">Submit</button>
                 </section>
             </form>
         </main>
