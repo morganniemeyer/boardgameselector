@@ -65,7 +65,7 @@
                     </div>
                     <!-- Time To Play -->
                     <h3>Time to play</h3>
-                    <select id="time">
+                    <select id="time" name="time">
                         <option name="time" value="under-10">0-10 minutes</option>
                         <option name="time" value="10-30">10-30 minutes</option>
                         <option name="time" value="30-60">30 minutes - 1 hour</option>
@@ -75,7 +75,7 @@
                     </select>
                     <!-- Difficulty/Complexity -->
                     <h3>Complexity</h3>
-                    <select id="complexity">
+                    <select id="complexity" name="complexity">
                         <option name="complexity" value="toddler">Toddler Level</option>
                         <option name="complexity" value="elementary">
                             Elementary School Level
@@ -94,6 +94,7 @@
                     <!-- Game type radio buttons -->
                     <h3>Game Type</h3>
                     <div class="game-type">
+                        
                         <label for="deck-builder"
                             >Deck Builder
                             <input
@@ -258,7 +259,7 @@
 
                     <h3>Game Aesthetic</h3>
 
-                    <select id="aesthetic" class="aesthetic">
+                    <select id="aesthetic" name="aesthetic" class="aesthetic">
                         <option name="aesthetic" value="spooky">Spooky</option>
                         <option name="aesthetic" value="zen">Zen</option>
                         <option name="aesthetic" value="medieval">Medieval</option>
@@ -284,9 +285,9 @@
 
                     <!-- Image Upload Area -->
                     <div class="image-area">
-                        <input type="file" />
+                        <input type="file" name="image-input" id="image-input" />
                     </div>
-                    <img src="../assets/meeple.png" alt="" class="preview" />
+                    <img src="../assets/meeple.png" id="image-preview" alt="" class="preview" />
                     <!-- Submit button -->
                     <button id="submit" class="submit">Submit</button>
                 </section>
