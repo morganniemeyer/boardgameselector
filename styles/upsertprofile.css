@@ -12,3 +12,31 @@
     --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
         'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
+
+.form {
+    background: #fef4d7;
+    border: 5px solid var(--action-color);
+    border-radius: 43px;
+    box-shadow: 15px 15px var(--action-color);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    margin: 20px;
+    max-width: fit-content;
+    font-size: xx-large;
+    gap: 30px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    max-height: 250px;
+    max-width: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+}
