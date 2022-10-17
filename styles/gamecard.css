@@ -14,8 +14,8 @@
 }
 
 .library-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
@@ -28,6 +28,7 @@
     border-radius: 43px;
     padding: 15px;
     padding-top: 0px;
+    width: 225px;
 }
 
 .game-title {

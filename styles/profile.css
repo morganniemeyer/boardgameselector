@@ -32,6 +32,8 @@ main {
     box-shadow: 15px 15px var(--action-color);
     padding: 20px;
     padding-top: 0;
+    display: grid;
+    grid-template-rows: auto;
 }
 
 .favorite-game {
@@ -46,4 +48,14 @@ main {
     text-align: center;
     font-weight: 700;
     font-size: x-large;
+}
+
+.avatar-profile {
+    width: 200px;
+    margin: 20px;
+}
+
+.profile-hold {
+    display: flex;
+    justify-content: space-around;
 }
