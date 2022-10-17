@@ -27,14 +27,13 @@ form.addEventListener('submit', async (e) => {
 
     const formData = new FormData(form);
     let url = null;
-    const imageFile = formData.get('form');
+    const imageFile = formData.get('image');
 
     if (imageFile) {
         const randomFolder = Math.floor(Date.now() * Math.random());
         const imagePath = `post/${randomFolder}/${imageFile.name}`;
         url = await uploadImage('bucket1', imagePath, imageFile);
     }
-
     let profile = {
         user_name: formData.get('user_name'),
         bio: formData.get('bio'),
