@@ -35,7 +35,7 @@ form.addEventListener('submit', async (e) => {
         url = await uploadImage('bucket1', imagePath, imageFile);
     }
 
-    const profile = {
+    let profile = {
         user_name: formData.get('user_name'),
         bio: formData.get('bio'),
         avatar: url,
