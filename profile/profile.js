@@ -4,8 +4,17 @@ import './auth/user.js';
 
 /* Get DOM Elements */
 
-/* State */
+// /* State */
+// let error = null;
+// let profile = null;
 
-/* Events */
+// /* Events */
 
-/* Display Functions */
+// /* Display Functions */
+// function displayError() {
+//     if (error) {
+//         errorDisplay.textContent = error.message;
+//     } else {
+//         errorDisplay.textContent = '';
+//     }
+// }
