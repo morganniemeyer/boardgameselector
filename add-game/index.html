@@ -43,7 +43,7 @@
         </header>
 
         <main>
-            <form>
+            <form id="game-form">
                 <section class="form">
                     <!-- Title Section -->
                     <h3>Title</h3>
@@ -60,31 +60,37 @@
                         </div>
                         <div class="max-players">
                             <h3>Max Players</h3>
-                            <input type="number" id="max-players" required />
+                            <input name="max-players" type="number" id="max-players" required />
                         </div>
                     </div>
                     <!-- Time To Play -->
                     <h3>Time to play</h3>
                     <select id="time">
-                        <option value="under-10">0-10 minutes</option>
-                        <option value="10-30">10-30 minutes</option>
-                        <option value="30-60">30 minutes - 1 hour</option>
-                        <option value="60-90">1 hour - 1.5 hours</option>
-                        <option value="90-120">1.5 hours - 2 hours</option>
-                        <option value="120-plus">2 hours or longer</option>
+                        <option name="time" value="under-10">0-10 minutes</option>
+                        <option name="time" value="10-30">10-30 minutes</option>
+                        <option name="time" value="30-60">30 minutes - 1 hour</option>
+                        <option name="time" value="60-90">1 hour - 1.5 hours</option>
+                        <option name="time" value="90-120">1.5 hours - 2 hours</option>
+                        <option name="time" value="120-plus">2 hours or longer</option>
                     </select>
                     <!-- Difficulty/Complexity -->
                     <h3>Complexity</h3>
                     <select id="complexity">
-                        <option value="toddler">Toddler Level</option>
-                        <option value="elementary">Elementary School Level</option>
-                        <option value="high-school">High School Level</option>
-                        <option value="college">College Level</option>
-                        <option value="grad-school">Grad School Level</option>
+                        <option name="complexity" value="toddler">Toddler Level</option>
+                        <option name="complexity" value="elementary">
+                            Elementary School Level
+                        </option>
+                        <option name="complexity" value="high-school">High School Level</option>
+                        <option name="complexity" value="college">College Level</option>
+                        <option name="complexity" value="grad-school">Grad School Level</option>
                     </select>
                     <!-- Rules link input -->
                     <h3>Link to rules</h3>
-                    <input id="rules-link" placeholder="Place link to game rules (optional)" />
+                    <input
+                        name="rules"
+                        id="rules-link"
+                        placeholder="Place link to game rules (optional)"
+                    />
                     <!-- Game type radio buttons -->
                     <h3>Game Type</h3>
                     <div class="game-type">
@@ -253,23 +259,27 @@
                     <h3>Game Aesthetic</h3>
 
                     <select id="aesthetic" class="aesthetic">
-                        <option value="spooky">Spooky</option>
-                        <option value="zen">Zen</option>
-                        <option value="medieval">Medieval</option>
-                        <option value="food">Food</option>
-                        <option value="horror">Horror</option>
-                        <option value="femme-weeb-nonsense">Femme Weeb Nonsense</option>
-                        <option value="masc-weeb-nonsense">Masc Weeb Nonsense</option>
-                        <option value="sci-fi">Sci-Fi</option>
-                        <option value="space">Space</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="western">Western</option>
-                        <option value="classic">Classic</option>
-                        <option value="animals">Animals</option>
-                        <option value="children">Children's</option>
-                        <option value="dnd">DnD</option>
-                        <option value="zombie">Zombie</option>
-                        <option value="retro">Retro</option>
+                        <option name="aesthetic" value="spooky">Spooky</option>
+                        <option name="aesthetic" value="zen">Zen</option>
+                        <option name="aesthetic" value="medieval">Medieval</option>
+                        <option name="aesthetic" value="food">Food</option>
+                        <option name="aesthetic" value="horror">Horror</option>
+                        <option name="aesthetic" value="femme-weeb-nonsense">
+                            Femme Weeb Nonsense
+                        </option>
+                        <option name="aesthetic" value="masc-weeb-nonsense">
+                            Masc Weeb Nonsense
+                        </option>
+                        <option name="aesthetic" value="sci-fi">Sci-Fi</option>
+                        <option name="aesthetic" value="space">Space</option>
+                        <option name="aesthetic" value="fantasy">Fantasy</option>
+                        <option name="aesthetic" value="western">Western</option>
+                        <option name="aesthetic" value="classic">Classic</option>
+                        <option name="aesthetic" value="animals">Animals</option>
+                        <option name="aesthetic" value="children">Children's</option>
+                        <option name="aesthetic" value="dnd">DnD</option>
+                        <option name="aesthetic" value="zombie">Zombie</option>
+                        <option name="aesthetic" value="retro">Retro</option>
                     </select>
 
                     <!-- Image Upload Area -->
