@@ -12,3 +12,49 @@
     --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
         'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
+.form {
+    background: #fef4d7;
+    border: 5px solid var(--action-color);
+    border-radius: 43px;
+    box-shadow: 15px 15px var(--action-color);
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    margin: 20px;
+}
+
+.min-max {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.game-type {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: space-around;
+}
+input {
+    width: 225px;
+}
+select {
+    width: 225px;
+}
+
+.aesthetic {
+    margin: 15px;
+    margin-top: 0px;
+}
+
+.image-area {
+    margin: 15px;
+}
+
+.submit {
+    margin: 15px;
+}
