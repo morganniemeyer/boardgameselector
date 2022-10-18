@@ -2,12 +2,12 @@
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import { renderGameCard } from './render-utils.js';
-import { getGames } from './fetch-utils.js';
+import { getGames, getGamesByQuery } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const gameCardHolder = document.getElementById('gamecard-holder');
 const errorDisplay = document.getElementById('error-display');
-const searchForm = document.getElementById('searchform');
+const searchForm = document.getElementById('search-form');
 
 /* State */
 let error = null;
@@ -26,11 +26,12 @@ window.addEventListener('load', async () => {
     }
 });
 
-searchForm.addEventListener('submit', (e) => {
+searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
+    const title = formData.get('search-input')
 
-    findGames(formData.get('searchinput'));
+    findGames(title);
 })
 
 /* Display Functions */
@@ -52,11 +53,9 @@ function displayCards() {
 }
 
 async function findGames(title) {
-    const response = await getGames(title);
-
+    const response = await getGamesByQuery(title);
     error = response.error;
     games = response.data;
-
     if (error) {
         displayError();
     } else {
