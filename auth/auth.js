@@ -61,11 +61,11 @@ authForm.addEventListener('submit', async (e) => {
         errorDisplay.textContent = error.message;
         authButton.disabled = false;
     } else {
-        // go back to wherever user came from...
-        // check the query params for a redirect Url (page before auth redirect)
-        const params = new URLSearchParams(location.search);
-        const redirectUrl = params.get('redirectUrl') || '/';
-        location.replace(redirectUrl);
+        if (isSignIn) {
+            location.replace('/');
+        } else {
+            location.replace('../upsert-profile/');
+        }
     }
 });
 
