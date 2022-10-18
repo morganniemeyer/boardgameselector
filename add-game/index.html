@@ -56,11 +56,11 @@
                     <div class="min-max">
                         <div class="min-players">
                             <h3>Min Players</h3>
-                            <input name="min-players" type="number" id="min-players" required />
+                            <input name="min-players" type="number" min="1" id="min-players" required />
                         </div>
                         <div class="max-players">
                             <h3>Max Players</h3>
-                            <input name="max-players" type="number" id="max-players" required />
+                            <input name="max-players" type="number" min="1" id="max-players" required />
                         </div>
                     </div>
                     <!-- Time To Play -->
@@ -111,7 +111,7 @@
                                 type="checkbox"
                                 name="game-type"
                                 id="roll-and-write"
-                                value=" roll and write"
+                                value=" roll-and-write"
                             />
                         </label>
 
