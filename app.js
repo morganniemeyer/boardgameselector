@@ -19,10 +19,11 @@ window.addEventListener('load', async () => {
     const response = await getGames();
     error = response.error;
     games = response.data;
+
     if (error) {
         displayError();
     } else {
-        displayCards();
+        displayCards(games);
     }
 });
 
@@ -43,7 +44,7 @@ function displayError() {
     }
 }
 
-function displayCards() {
+function displayCards(games) {
     gameCardHolder.innerHTML = '';
 
     for (const game of games) {

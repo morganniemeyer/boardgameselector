@@ -29,9 +29,7 @@
     padding: 15px;
     padding-top: 0px;
     width: 225px;
-}
-
-.game-title {
+    padding-left: 25px;
 }
 
 .game-box {
@@ -40,7 +38,7 @@
 }
 
 .game-type {
-}
-
-.player-range {
+    list-style: square;
+    padding-bottom: 5px;
+    text-transform: capitalize;
 }
