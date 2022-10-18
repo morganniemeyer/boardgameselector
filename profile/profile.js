@@ -5,16 +5,16 @@ import '../auth/user.js';
 /* Get DOM Elements */
 
 // /* State */
-// let error = null;
+let error = null;
 // let profile = null;
 
 // /* Events */
 
 // /* Display Functions */
-// function displayError() {
-//     if (error) {
-//         errorDisplay.textContent = error.message;
-//     } else {
-//         errorDisplay.textContent = '';
-//     }
-// }
+function displayError() {
+    if (error) {
+        errorDisplay.textContent = error.message;
+    } else {
+        errorDisplay.textContent = '';
+    }
+}
