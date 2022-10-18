@@ -44,7 +44,7 @@ form.addEventListener('submit', async (e) => {
         type: formData.getAll('game-type'),
         aesthetic: formData.get('aesthetic'),
         image: url,
-    }
+    };
 
     const response = await gameToLibrary(game);
     error = response.error;

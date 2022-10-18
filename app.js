@@ -29,10 +29,10 @@ window.addEventListener('load', async () => {
 searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
-    const title = formData.get('search-input')
+    const title = formData.get('search-input');
 
     findGames(title);
-})
+});
 
 /* Display Functions */
 function displayError() {

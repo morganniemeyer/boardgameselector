@@ -1,5 +1,5 @@
 // import services and utilities
-import { getUser, signInUser, signUpUser, upsertProfile } from '../fetch-utils.js';
+import { getUser, signInUser, signUpUser } from '../fetch-utils.js';
 
 // If on this /auth page but we have a user, it means
 // user probably navigated here by the url.
@@ -62,9 +62,9 @@ authForm.addEventListener('submit', async (e) => {
         authButton.disabled = false;
     } else {
         if (isSignIn) {
-            location.replace('/')
+            location.replace('/');
         } else {
-            location.replace('../upsert-profile/')
+            location.replace('../upsert-profile/');
         }
     }
 });
