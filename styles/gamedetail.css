@@ -34,7 +34,7 @@ form input {
 
 .add-comment {
     color: black;
-    background-color:#fef4d7;
+    background-color: #fef4d7;
     border: 5px solid var(--action-color);
     box-shadow: 10px 10px var(--action-color);
     border-radius: 35px;
@@ -47,4 +47,35 @@ form input {
     border-radius: 35px;
     margin: 25px;
     padding: 10px;
+}
+
+.big-gamecard {
+    background: #fef4d7;
+    border: 5px solid var(--action-color);
+    border-radius: 43px;
+    box-shadow: 15px 15px var(--action-color);
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.type-holder {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 150px;
+}
+
+img {
+    float: right;
+}
+
+.game-title {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+p {
+    text-transform: capitalize;
 }
