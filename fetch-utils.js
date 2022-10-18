@@ -69,3 +69,6 @@ export async function getGamesByQuery(title) {
     return response;
 }
 
+export async function getSingleGame(id) {
+    return await client.from('games').select().eq('id', id).single();
+}

@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Supabase Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/meeple.png" />
 
-    <!-- title and favicon -->
-    <title>Supabase Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/meeple.png" />
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="game-detail.js"></script>
 
-    <!-- js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
-    <script type="module" src="game-detail.js"></script>
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+        <!-- css -->
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/gamecard.css" />
+        <!-- <link rel="stylesheet" href="../styles/form.css" /> -->
+        <link rel="stylesheet" href="../styles/gamedetail.css" />
+        <!-- add link for page specific css -->
+    </head>
 
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/meeple-noBG.png" alt="logo" />
+            <p class="title">Game Title</p>
+            <nav>
+                <a href="../">Home</a>
+                <a id="sign-out-link" href="../auth">Sign Out</a>
+                <a href="../upsert-profile/index.html" id="upsert-profile">Edit Profile</a>
+                <a href="../profile/index.html" id="profile">My Profile</a>
+                <a href="../add-game/index.html" id="add-game">Add Game</a>
+            </nav>
+        </header>
 
-    <!-- css -->
-    <link rel="stylesheet" href="../styles/reset.css" />
-    <link rel="stylesheet" href="../styles/global.css" />
-    <link rel="stylesheet" href="../styles/gamecard.css" />
-    <!-- <link rel="stylesheet" href="../styles/form.css" /> -->
-    <link rel="stylesheet" href="../styles/gamedetail.css" />
-    <!-- add link for page specific css -->
-
-</head>
-
-<body>
-    <header class="page-header">
-        <img class="logo" src="/assets/meeple-noBG.png" alt="logo">
-        <p class="title">Game Title</p>
-        <nav>
-            <a href="../">Home</a>
-            <a id="sign-out-link" href="../auth">Sign Out</a>
-            <a href="../upsert-profile/index.html" id="upsert-profile">Edit Profile</a>
-            <a href="../profile/index.html" id="profile">My Profile</a>
-            <a href="../add-game/index.html" id="add-game">Add Game</a>
-        </nav>
-    </header>
-
-    <main>
-        <div class="big-gamecard">
-            <h1 class="game-title">Game Title</h1>
-            <p class="player-range">2-7 players</p>
-            <p class="time">Game Length</p>
-            <p class="complexity">Complexity</p>
-            <a class="rules" href="">Rules Link</a>
-            <p class="aesthetic">Aesthetic</p>
-            <ul class="game-type"></ul>
-            <img class="game-box" src="/assets/meeple-noBG.png" alt="a meeple" />
-        </div>
-        <button class="add-to-lib" id="add-to-lib">Add to Personal Game Library</button>
-        <form class="add-comment-form">
+        <main>
+            <div class="big-gamecard">
+                <h1 class="game-title">Game Title</h1>
+                <p class="player-range">2-7 players</p>
+                <p class="time">Game Length</p>
+                <p class="complexity">Complexity</p>
+                <a class="rules" href="">Rules Link</a>
+                <p class="aesthetic">Aesthetic</p>
+                <ul class="game-type"></ul>
+                <img class="game-box" src="/assets/meeple-noBG.png" alt="a meeple" />
+            </div>
+            <button class="add-to-lib" id="add-to-lib">Add to Personal Game Library</button>
+            <!-- <form class="add-comment-form">
             <h3 id="message-board-header">What do you think about this game?</h3>
             <div id="comment-entry">
                 <input name="text" type="text" />
@@ -72,11 +74,9 @@
             <li class="comment">Wow!</li>
             <li class="comment">Wow!</li>
             <li class="comment">Wow!</li>
-        </ul>
-    </section>
-    <p id="error-display"></p>
-    </main>
-
-</body>
-
+        </ul> -->
+            <!-- </section> -->
+            <p id="error-display"></p>
+        </main>
+    </body>
 </html>
