@@ -10,9 +10,13 @@ export function renderGameCard(game) {
     pcount.classList.add('player-range');
     pcount.textContent = `${game.min_players} to ${game.max_players}`;
 
-    const ptype = document.createElement('p');
-    ptype.classList.add('game-type');
-    ptype.textContent = game.type;
+    const ptype = document.createElement('ol');
+    for (const type of game.type) {
+        const typeEl = document.createElement('li');
+        typeEl.textContent = type;
+        typeEl.classList.add('game-type');
+        ptype.append(typeEl);
+    }
 
     const img = document.createElement('img');
     img.classList.add('game-box');
