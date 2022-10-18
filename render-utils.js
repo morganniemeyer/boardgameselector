@@ -40,7 +40,7 @@ export function renderBigCard(game) {
 
     const pcount = document.createElement('p');
     pcount.classList.add('player-range');
-    pcount.textContent = `${game.min_players} to ${game.max_players}`;
+    pcount.textContent = `${game.min_players} to ${game.max_players} players`;
 
     const ptime = document.createElement('p');
     ptime.classList.add('time');
@@ -55,6 +55,7 @@ export function renderBigCard(game) {
     paest.textContent = game.aesthetic;
 
     const ptype = document.createElement('ol');
+    ptype.classList.add('type-holder');
     for (const type of game.type) {
         const typeEl = document.createElement('li');
         typeEl.textContent = type;
@@ -71,10 +72,10 @@ export function renderBigCard(game) {
         rules.classList.add('rules-link');
         rules.textContent = 'Rules Link';
         rules.href = game.rules;
-        div.append(h1, pcount, ptime, pcomp, rules, paest, ptype, img);
+        div.append(h1, img, pcount, ptime, pcomp, rules, paest, ptype);
         return div;
     } else {
-        div.append(h1, pcount, ptime, pcomp, paest, ptype, img);
+        div.append(h1, img, pcount, ptime, pcomp, paest, ptype);
         return div;
     }
 }

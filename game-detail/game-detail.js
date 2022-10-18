@@ -7,6 +7,7 @@ import { renderBigCard } from '../render-utils.js';
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const bigCard = document.getElementById('big-gamecard');
+const titleGame = document.getElementById('title-header');
 
 /* State */
 let error = null;
@@ -26,6 +27,7 @@ window.addEventListener('load', async () => {
     if (!game) {
         location.assign('/');
     } else {
+        titleGame.textContent = game.title;
         displayGame(game);
     }
 });
