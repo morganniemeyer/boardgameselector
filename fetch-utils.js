@@ -57,3 +57,4 @@ export async function gameToLibrary(game) {
 export async function getGames() {
     return await client.from('games').select('*');
 }
+

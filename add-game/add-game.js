@@ -10,6 +10,7 @@ const preview = document.getElementById('image-preview');
 /* State */
 let error = null;
 /* Events */
+// image input event listener
 imageInput.addEventListener('change', () => {
     const box = imageInput.files[0];
     if (box) {
@@ -19,6 +20,7 @@ imageInput.addEventListener('change', () => {
     }
 });
 
+// create game form
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -31,7 +33,7 @@ form.addEventListener('submit', async (e) => {
         const imagePath = `post/${randomFolder}/${imageFile.name}`;
         url = await uploadImage('bucket2', imagePath, imageFile);
     }
-    console.log(url);
+    
     let game = {
         title: formData.get('title'),
         min_players: formData.get('min-players'),
@@ -42,7 +44,7 @@ form.addEventListener('submit', async (e) => {
         type: formData.getAll('game-type'),
         aesthetic: formData.get('aesthetic'),
         image: url,
-    };
+    }
 
     const response = await gameToLibrary(game);
     error = response.error;

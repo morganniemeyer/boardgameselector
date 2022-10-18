@@ -7,12 +7,14 @@ import { getGames } from './fetch-utils.js';
 /* Get DOM Elements */
 const gameCardHolder = document.getElementById('gamecard-holder');
 const errorDisplay = document.getElementById('error-display');
+const searchForm = document.getElementById('searchform');
 
 /* State */
 let error = null;
 let games = [];
 
 /* Events */
+//render library
 window.addEventListener('load', async () => {
     const response = await getGames();
     error = response.error;
@@ -23,6 +25,13 @@ window.addEventListener('load', async () => {
         displayCards();
     }
 });
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+
+    findGames(formData.get('searchinput'));
+})
 
 /* Display Functions */
 function displayError() {
@@ -39,5 +48,18 @@ function displayCards() {
     for (const game of games) {
         const gameEl = renderGameCard(game);
         gameCardHolder.append(gameEl);
+    }
+}
+
+async function findGames(title) {
+    const response = await getGames(title);
+
+    error = response.error;
+    games = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        displayCards();
     }
 }
