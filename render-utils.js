@@ -79,3 +79,5 @@ export function renderBigCard(game) {
         return div;
     }
 }
+
+export function renderProfile(profile) {}
