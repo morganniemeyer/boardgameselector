@@ -13,3 +13,25 @@
         'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
 
+.game-search {
+    background: #fef4d7;
+    border: 5px solid var(--action-color);
+    border-radius: 43px;
+    box-shadow: 15px 15px var(--action-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 40px 70px 40px;
+}
+
+.add-search {
+    display: flex;
+    align-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+input {
+    height: 28px;
+}
