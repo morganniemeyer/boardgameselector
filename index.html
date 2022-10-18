@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="/styles/gamecard.css" />
+        <link rel="stylesheet" href="/styles/home.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -50,15 +51,20 @@
             <p id="error-display"></p>
             <section class="game-search">
                 <!--Holds search function and button link for add game-->
-                <form action="search" class="searchform">
-                    <!--Search game library form-->
-                    <input type="text" name="searchinput" id="searchinput" class="searchinput" />
-                    <button class="searchbutton">🔎</button
-                    ><!--I don't know if I like this emoji or if we should swap for a better image-->
-                </form>
-                <a href="/add-game/index.html">
-                    <button>Add A Game</button>
-                </a>
+                <div class="add-search">
+                    <form action="search" class="searchform">
+                        <!--Search game library form-->
+                        <input
+                            type="text"
+                            name="searchinput"
+                            id="searchinput"
+                            class="searchinput"
+                        />
+                        <button class="searchbutton">🔎</button
+                        ><!--I don't know if I like this emoji or if we should swap for a better image-->
+                    </form>
+                    <button id="add-button">Add A Game</button>
+                </div>
                 <p>Please search before adding a game to the Library</p>
             </section>
             <section>

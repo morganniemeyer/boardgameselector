@@ -31,7 +31,7 @@ form.addEventListener('submit', async (e) => {
         const imagePath = `post/${randomFolder}/${imageFile.name}`;
         url = await uploadImage('bucket2', imagePath, imageFile);
     }
-    console.log(url);
+
     let game = {
         title: formData.get('title'),
         min_players: formData.get('min-players'),
