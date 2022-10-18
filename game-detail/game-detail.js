@@ -6,14 +6,16 @@ import { renderBigCard } from '../render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
+const bigCard = document.getElementById('big-gamecard');
 
 /* State */
 let error = null;
+let game = null;
+
 /* Events */
 window.addEventListener('load', async () => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
-
     const response = await getSingleGame(id);
     error = response.error;
     game = response.data;
@@ -24,7 +26,7 @@ window.addEventListener('load', async () => {
     if (!game) {
         location.assign('/');
     } else {
-        renderBigCard(game);
+        displayGame(game);
     }
 });
 
@@ -35,4 +37,10 @@ function displayError() {
     } else {
         errorDisplay.textContent = '';
     }
+}
+
+function displayGame(game) {
+    bigCard.innerHTML = '';
+    const gameDisplay = renderBigCard(game);
+    bigCard.append(gameDisplay);
 }
