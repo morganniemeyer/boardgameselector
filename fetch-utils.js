@@ -49,3 +49,11 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 export async function upsertProfile(profile) {
     return await client.from('profiles').upsert(profile).single().eq('user_id', profile.user_id);
 }
+
+export async function gameToLibrary(game) {
+    return await client.from('games').upsert(game).single();
+}
+
+export async function getGames() {
+    return await client.from('games').select('*');
+}
