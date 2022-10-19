@@ -63,6 +63,9 @@ export async function gameToPersonalLibrary(game) {
 export async function getGames() {
     return await client.from('games').select('*');
 }
+export async function getPersonalGames(id) {
+    return await client.from('user_library').select().eq('user_id', id);
+}
 
 export async function getGamesByQuery(title) {
     let query = client.from('games').select();
