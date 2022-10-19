@@ -9,6 +9,7 @@ import { renderGameCard } from '../render-utils.js';
 const errorDisplay = document.getElementById('error-display');
 const profileDisplay = document.getElementById('user-display');
 const cardHolder = document.getElementById('card-holder');
+const randomButton = document.getElementById('random-game');
 
 // /* State */
 let error = null;
@@ -35,6 +36,19 @@ window.addEventListener('load', async () => {
         displayCards(games);
     }
 });
+
+randomButton.addEventListener('click', async () => {
+    const response = await getGames();
+    error = response.error;
+    games = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        const randomGame = games[Math.floor(Math.random()*games.length)];
+        location.assign(`/game-detail/?id=${randomGame.id}`);
+    }
+})
 // /* Display Functions */
 function displayError() {
     if (error) {
