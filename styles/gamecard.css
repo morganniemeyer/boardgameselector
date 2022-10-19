@@ -42,3 +42,8 @@
     padding-bottom: 5px;
     text-transform: capitalize;
 }
+
+.gamecard a {
+    text-decoration: none;
+    color: initial;
+}

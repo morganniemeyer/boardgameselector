@@ -29,7 +29,7 @@ main {
     background: #fef4d7;
     border: 5px solid var(--action-color);
     border-radius: 43px;
-    box-shadow: 15px 15px var(--action-color);
+    box-shadow: 15px -15px var(--action-color);
     padding: 20px;
     padding-top: 0;
     display: grid;
@@ -43,7 +43,7 @@ main {
     background: var(--offset-color);
     border: 5px solid var(--offborder-color);
     border-radius: 43px;
-    box-shadow: 15px 15px var(--offborder-color);
+    box-shadow: 15px -15px var(--offborder-color);
     padding: 15px;
     text-align: center;
     font-weight: 700;

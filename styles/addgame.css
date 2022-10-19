@@ -16,7 +16,7 @@
     background: #fef4d7;
     border: 5px solid var(--action-color);
     border-radius: 43px;
-    box-shadow: 15px 15px var(--action-color);
+    box-shadow: 15px -15px var(--action-color);
     padding: 20px;
     padding-top: 0;
     display: grid;
@@ -72,4 +72,21 @@ main {
 
 input[type='checkbox'] {
     width: 75px;
+}
+
+button {
+    box-shadow: 3px 4px 0px 0px #e1e1ea;
+    background-color: #30302b;
+    border-radius: 15px;
+    border: 1px solid #30302b;
+    display: inline-block;
+    cursor: pointer;
+    color: #e0e1ea;
+    font-size: 17px;
+    padding: 7px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #30302b;
+}
+button:hover {
+    background-color: #1a8be2;
 }

@@ -55,6 +55,8 @@ libAdd.addEventListener('click', async () => {
     if (error) {
         displayError();
     }
+
+    location.replace('../profile/');
 });
 
 /* Display Functions */
