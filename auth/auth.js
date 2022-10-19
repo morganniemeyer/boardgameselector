@@ -13,6 +13,7 @@ const authHeader = authForm.querySelector('h2');
 const authButton = authForm.querySelector('button');
 const changeType = authForm.querySelector('a');
 const errorDisplay = authForm.querySelector('.error');
+const pageTop = document.getElementById('title-head');
 
 /* let state */
 let isSignIn = true;
@@ -74,10 +75,12 @@ authForm.addEventListener('submit', async (e) => {
 function displayAuth() {
     // set the text display on the header, button, and change type link
     if (isSignIn) {
+        pageTop.textContent = 'Sign in to GameStack';
         authHeader.textContent = 'Sign in to your account';
         authButton.textContent = 'Sign In';
         changeType.textContent = 'Need to create an account?';
     } else {
+        pageTop.textContent = 'Sign up for GameStack';
         authHeader.textContent = 'Create a new account';
         authButton.textContent = 'Sign Up';
         changeType.textContent = 'Already have an account?';
