@@ -7,6 +7,7 @@ import { renderBigCard } from '../render-utils.js';
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const bigCard = document.getElementById('big-gamecard');
+const titleTop = document.getElementById('site-top');
 const titleGame = document.getElementById('title-header');
 const libAdd = document.getElementById('add-to-lib');
 
@@ -29,6 +30,7 @@ window.addEventListener('load', async () => {
         location.assign('/');
     } else {
         titleGame.textContent = game.title;
+        titleTop.textContent = game.title;
         displayGame(game);
     }
 });

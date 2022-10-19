@@ -10,6 +10,7 @@ const errorDisplay = document.getElementById('error-display');
 const profileDisplay = document.getElementById('user-display');
 const cardHolder = document.getElementById('card-holder');
 const randomButton = document.getElementById('random-game');
+const userName = document.getElementById('title-head');
 
 // /* State */
 let error = null;
@@ -32,6 +33,7 @@ window.addEventListener('load', async () => {
     if (error) {
         displayError();
     } else {
+        userName.textContent = `${profile.user_name}'s Profile`;
         displayProfile(profile);
         displayCards(games);
     }

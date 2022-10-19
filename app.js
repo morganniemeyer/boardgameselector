@@ -25,7 +25,9 @@ window.addEventListener('load', async () => {
     if (error) {
         displayError();
     } else {
-        games.sort(function(){ return 0.5 - Math.random();});
+        games.sort(function(){
+            return 0.5 - Math.random();
+        });
         displayCards(games);
     }
 });
