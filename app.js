@@ -24,7 +24,9 @@ window.addEventListener('load', async () => {
     if (error) {
         displayError();
     } else {
-        games.sort(function(){return 0.5 - Math.random();});
+        games.sort(function () {
+            return 0.5 - Math.random();
+        });
         displayCards(games);
     }
 });
@@ -50,22 +52,22 @@ function displayError() {
     }
 }
 
+async function findGames(title) {
+    const response = await getGamesByQuery(title);
+    error = response.error;
+    games = response.data;
+    console.log(games);
+    if (error) {
+        displayError();
+    } else {
+        displayCards(games);
+    }
+}
 function displayCards(games) {
     gameCardHolder.innerHTML = '';
 
     for (const game of games) {
         const gameEl = renderGameCard(game);
         gameCardHolder.append(gameEl);
-    }
-}
-
-async function findGames(title) {
-    const response = await getGamesByQuery(title);
-    error = response.error;
-    games = response.data;
-    if (error) {
-        displayError();
-    } else {
-        displayCards();
     }
 }
