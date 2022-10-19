@@ -15,6 +15,7 @@ const randomButton = document.getElementById('random-game');
 let error = null;
 let profile = null;
 let games = [];
+let object = null;
 
 // /* Events */
 window.addEventListener('load', async () => {
@@ -38,7 +39,10 @@ window.addEventListener('load', async () => {
 });
 
 randomButton.addEventListener('click', async () => {
-    const response = await getGames();
+    const userData = getUser();
+    const id = userData.id;
+    const response = await getPersonalGames(id);
+    console.log(response);
     error = response.error;
     games = response.data;
 
@@ -46,7 +50,9 @@ randomButton.addEventListener('click', async () => {
         displayError();
     } else {
         const randomGame = games[Math.floor(Math.random()*games.length)];
-        location.assign(`/game-detail/?id=${randomGame.id}`);
+        const chosenGameDetails = randomGame.games;
+        console.log(chosenGameDetails);
+        location.assign(`/game-detail/?id=${chosenGameDetails.id}`);
     }
 })
 // /* Display Functions */
