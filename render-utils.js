@@ -11,7 +11,7 @@ export function renderGameCard(game) {
 
     const pcount = document.createElement('p');
     pcount.classList.add('player-range');
-    pcount.textContent = `${game.min_players} to ${game.max_players}`;
+    pcount.textContent = `${game.min_players} to ${game.max_players} players`;
 
     const ptype = document.createElement('ol');
     for (const type of game.type) {
@@ -81,7 +81,6 @@ export function renderBigCard(game) {
 }
 
 export function renderProfile(profile) {
-
     const profileBox = document.createElement('div');
     profileBox.classList.add('profile-hold');
 
@@ -91,7 +90,7 @@ export function renderProfile(profile) {
     const h1 = document.createElement('h1');
     h1.classList.add('username-display');
     h1.textContent = profile.user_name;
-    
+
     const p = document.createElement('p');
     p.classList.add('bio-display');
     p.textContent = profile.bio;

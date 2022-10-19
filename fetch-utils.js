@@ -68,10 +68,10 @@ export async function getPersonalGames(id) {
 }
 
 export async function getGamesByQuery(title) {
-    let query = client.from('games').select();
+    let query = client.from('games').select('*');
 
     if (title) {
-        query = query.ilike('title', `%${title}`);
+        query = query.ilike('title', `%${title}%`);
     }
 
     const response = await query;
