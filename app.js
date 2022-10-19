@@ -9,6 +9,7 @@ const gameCardHolder = document.getElementById('gamecard-holder');
 const errorDisplay = document.getElementById('error-display');
 const searchForm = document.getElementById('search-form');
 const addGame = document.getElementById('add-button');
+const randomButton = document.getElementById('random-game');
 
 /* State */
 let error = null;
@@ -43,6 +44,18 @@ addGame.addEventListener('click', () => {
     location.assign('../add-game');
 });
 
+randomButton.addEventListener('click', async () => {
+    const response = await getGames();
+    error = response.error;
+    games = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        const randomGame = games[Math.floor(Math.random() * games.length)];
+        location.assign(`/game-detail/?id=${randomGame.id}`);
+    }
+});
 /* Display Functions */
 function displayError() {
     if (error) {
