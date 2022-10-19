@@ -56,7 +56,6 @@ async function findGames(title) {
     const response = await getGamesByQuery(title);
     error = response.error;
     games = response.data;
-    console.log(games);
     if (error) {
         displayError();
     } else {
