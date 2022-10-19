@@ -19,12 +19,6 @@ main {
     gap: 60px;
 }
 
-.username-display {
-}
-
-.bio-display {
-}
-
 .profile-display {
     background: #fef4d7;
     border: 5px solid var(--action-color);
@@ -34,9 +28,6 @@ main {
     padding-top: 0;
     display: grid;
     grid-template-rows: auto;
-}
-
-.favorite-game {
 }
 
 .all-games-banner {
