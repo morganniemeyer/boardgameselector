@@ -80,7 +80,7 @@ export function renderBigCard(game) {
     }
 }
 
-    export function renderProfile(profile) {
+export function renderProfile(profile) {
 
     const profileBox = document.createElement('div');
     profileBox.classList.add('profile-hold');

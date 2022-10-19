@@ -26,7 +26,7 @@ window.addEventListener('load', async () => {
     } else {
         displayProfile(profile);
     }
-})
+});
 // /* Display Functions */
 function displayError() {
     if (error) {

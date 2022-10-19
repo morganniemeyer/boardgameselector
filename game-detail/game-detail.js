@@ -48,7 +48,6 @@ libAdd.addEventListener('click', async () => {
         image: game.image,
         user_id: id,
     };
-    console.log(pgame);
 
     const response = await gameToPersonalLibrary(pgame);
     error = response.error;
