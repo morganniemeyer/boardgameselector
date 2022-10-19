@@ -17,11 +17,14 @@ form:not(.inline) {
     width: 100%;
     margin: auto;
     max-width: 500px;
-    border: 1px solid;
-    background: var(--offset-color);
+    background: #fef4d7;
+    border: 5px solid var(--action-color);
+    border-radius: 43px;
+    box-shadow: 15px 15px var(--action-color);
     padding: 20px;
-
+    padding-top: 0;
     display: grid;
+    grid-template-rows: auto;
     gap: 20px;
 }
 

@@ -13,6 +13,7 @@ const form = document.querySelector('form');
 let error = null;
 
 /* Events */
+// image preview event listener
 imageInput.addEventListener('change', () => {
     const avatar = imageInput.files[0];
     if (avatar) {
@@ -22,6 +23,7 @@ imageInput.addEventListener('change', () => {
     }
 });
 
+//profile upsert form submission
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
