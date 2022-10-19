@@ -48,9 +48,6 @@ button:hover {
     grid-template-rows: auto;
 }
 
-.favorite-game {
-}
-
 .all-games-banner {
     background: var(--offset-color);
     border: 5px solid var(--offborder-color);

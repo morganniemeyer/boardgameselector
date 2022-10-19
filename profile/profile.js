@@ -67,7 +67,9 @@ function displayProfile(profile) {
 function displayCards(games) {
     cardHolder.innerHTML = '';
 
-    for (const game of games) {
+    for (const game_id of games) {
+        const game = game_id.games;
+
         const gameEl = renderGameCard(game);
         cardHolder.append(gameEl);
     }
