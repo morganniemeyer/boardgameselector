@@ -50,7 +50,7 @@ export async function upsertProfile(profile) {
     return await client.from('profiles').upsert(profile).single().eq('user_id', profile.user_id);
 }
 export async function getProfile(id) {
-    return await client.from('profiles').select().eq('id', user_id);
+    return await client.from('profiles').select().eq('user_id', id).single();
 }
 
 export async function gameToLibrary(game) {
