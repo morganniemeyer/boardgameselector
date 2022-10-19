@@ -9,6 +9,7 @@ import { renderGameCard } from '../render-utils.js';
 const errorDisplay = document.getElementById('error-display');
 const profileDisplay = document.getElementById('user-display');
 const cardHolder = document.getElementById('card-holder');
+const randomButton = document.getElementById('random-game');
 
 // /* State */
 let error = null;
@@ -35,6 +36,22 @@ window.addEventListener('load', async () => {
         displayCards(games);
     }
 });
+
+randomButton.addEventListener('click', async () => {
+    const userData = getUser();
+    const id = userData.id;
+    const response = await getPersonalGames(id);
+    error = response.error;
+    games = response.data;
+
+    if (error) {
+        displayError();
+    } else {
+        const randomGame = games[Math.floor(Math.random() * games.length)];
+        const chosenGameDetails = randomGame.games;
+        location.assign(`/game-detail/?id=${chosenGameDetails.id}`);
+    }
+});
 // /* Display Functions */
 function displayError() {
     if (error) {
@@ -53,7 +70,9 @@ function displayProfile(profile) {
 function displayCards(games) {
     cardHolder.innerHTML = '';
 
-    for (const game of games) {
+    for (const game_id of games) {
+        const game = game_id.games;
+
         const gameEl = renderGameCard(game);
         cardHolder.append(gameEl);
     }

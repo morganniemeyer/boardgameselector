@@ -36,16 +36,11 @@ window.addEventListener('load', async () => {
 libAdd.addEventListener('click', async () => {
     const userData = getUser();
     const id = userData.id;
+
+    const searchParams = new URLSearchParams(location.search);
+    const gameId = searchParams.get('id');
     let pgame = {
-        title: game.title,
-        min_players: game.min_players,
-        max_players: game.max_players,
-        rules: game.rules,
-        time: game.time,
-        complexity: game.complexity,
-        type: game.type,
-        aesthetic: game.aesthetic,
-        image: game.image,
+        game_id: gameId,
         user_id: id,
     };
 
