@@ -79,3 +79,29 @@ export function renderBigCard(game) {
         return div;
     }
 }
+
+export function renderProfile(profile) {
+
+    const profileBox = document.createElement('div');
+    profileBox.classList.add('profile-hold');
+
+    const textBox = document.createElement('div');
+    textBox.classList.add('profile-text');
+
+    const h1 = document.createElement('h1');
+    h1.classList.add('username-display');
+    h1.textContent = profile.user_name;
+    
+    const p = document.createElement('p');
+    p.classList.add('bio-display');
+    p.textContent = profile.bio;
+
+    const avatar = document.createElement('img');
+    avatar.classList.add('avatar-profile');
+    avatar.src = profile.avatar;
+
+    textBox.append(h1, p);
+    profileBox.append(textBox, avatar);
+
+    return profileBox;
+}

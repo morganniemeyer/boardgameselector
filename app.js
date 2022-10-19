@@ -8,6 +8,7 @@ import { getGames, getGamesByQuery } from './fetch-utils.js';
 const gameCardHolder = document.getElementById('gamecard-holder');
 const errorDisplay = document.getElementById('error-display');
 const searchForm = document.getElementById('search-form');
+const addGame = document.getElementById('add-button');
 
 /* State */
 let error = null;
@@ -33,6 +34,10 @@ searchForm.addEventListener('submit', async (e) => {
     const title = formData.get('search-input');
 
     findGames(title);
+});
+
+addGame.addEventListener('click', () => {
+    location.assign('../add-game');
 });
 
 /* Display Functions */
