@@ -9,7 +9,7 @@ const gameCardHolder = document.getElementById('gamecard-holder');
 const errorDisplay = document.getElementById('error-display');
 const searchForm = document.getElementById('search-form');
 const addGame = document.getElementById('add-button');
-const randomButton = document.getElementById('random-game')
+const randomButton = document.getElementById('random-game');
 
 /* State */
 let error = null;
@@ -50,10 +50,10 @@ randomButton.addEventListener('click', async () => {
     if (error) {
         displayError();
     } else {
-        const randomGame = games[Math.floor(Math.random()*games.length)];
+        const randomGame = games[Math.floor(Math.random() * games.length)];
         location.assign(`/game-detail/?id=${randomGame.id}`);
     }
-})
+});
 /* Display Functions */
 function displayError() {
     if (error) {
