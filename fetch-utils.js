@@ -57,7 +57,7 @@ export async function gameToLibrary(game) {
     return await client.from('games').upsert(game).single();
 }
 export async function gameToPersonalLibrary(game) {
-    return await client.from('user_lib').upsert(game).single();
+    return await client.from('user_lib').insert(game).single();
 }
 
 export async function getGames() {
