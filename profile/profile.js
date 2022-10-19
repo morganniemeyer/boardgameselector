@@ -3,7 +3,7 @@
 import '../auth/user.js';
 import { getPersonalGames, getProfile, getUser } from '../fetch-utils.js';
 import { renderProfile } from '../render-utils.js';
-import { renderGameCard } from '../render-utils.js';
+import { renderProfileGameCard } from '../render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
@@ -35,7 +35,7 @@ window.addEventListener('load', async () => {
     } else {
         userName.textContent = `${profile.user_name}'s Profile`;
         displayProfile(profile);
-        displayCards(games);
+        displayCards(games, id);
     }
 });
 
@@ -69,13 +69,13 @@ function displayProfile(profile) {
     profileDisplay.append(profileContent);
 }
 
-function displayCards(games) {
+function displayCards(games, id) {
     cardHolder.innerHTML = '';
 
     for (const game_id of games) {
         const game = game_id.games;
 
-        const gameEl = renderGameCard(game);
+        const gameEl = renderProfileGameCard(game, id);
         cardHolder.append(gameEl);
     }
 }
