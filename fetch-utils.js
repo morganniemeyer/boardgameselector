@@ -57,14 +57,14 @@ export async function gameToLibrary(game) {
     return await client.from('games').upsert(game).single();
 }
 export async function gameToPersonalLibrary(game) {
-    return await client.from('user_library').upsert(game).single();
+    return await client.from('user_lib').upsert(game).single();
 }
 
 export async function getGames() {
     return await client.from('games').select('*');
 }
 export async function getPersonalGames(id) {
-    return await client.from('user_library').select().eq('user_id', id);
+    return await client.from('user_lib').select('*, games (*)').eq('user_id', id);
 }
 
 export async function getGamesByQuery(title) {
@@ -80,4 +80,8 @@ export async function getGamesByQuery(title) {
 
 export async function getSingleGame(id) {
     return await client.from('games').select().eq('id', id).single();
+}
+
+export async function getSingleFromPersonal(id) {
+    return await client.from('user_library').select().eq('id', id).single();
 }

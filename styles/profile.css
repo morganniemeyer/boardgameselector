@@ -19,10 +19,22 @@ main {
     gap: 60px;
 }
 
-.username-display {
+button {
+    box-shadow: 3px 4px 0px 0px #e1e1ea;
+    background-color: #30302b;
+    border-radius: 15px;
+    border: 1px solid #30302b;
+    display: inline-block;
+    cursor: pointer;
+    color: #e0e1ea;
+    font-size: 17px;
+    padding: 7px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #30302b;
+    width: fit-content;
 }
-
-.bio-display {
+button:hover {
+    background-color: #1a8be2;
 }
 
 .profile-display {
@@ -34,9 +46,6 @@ main {
     padding-top: 0;
     display: grid;
     grid-template-rows: auto;
-}
-
-.favorite-game {
 }
 
 .all-games-banner {
