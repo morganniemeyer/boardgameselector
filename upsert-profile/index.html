@@ -46,7 +46,12 @@
             <form class="form" id="profile-form">
                 <div>Username</div>
                 <label>
-                    <input name="user_name" required placeholder="Create a username..." />
+                    <input
+                        name="user_name"
+                        id="user-name"
+                        required
+                        placeholder="Create a username..."
+                    />
                 </label>
 
                 <div>Avatar</div>
@@ -59,12 +64,16 @@
 
                 <div>Bio</div>
                 <label>
-                    <textarea name="bio" placeholder="About you..."></textarea>
+                    <textarea name="bio" id="bio" placeholder="About you..."></textarea>
                 </label>
 
                 <div>Favorite Game</div>
                 <label>
-                    <textarea name="favorite" placeholder="What's your favorite?"></textarea>
+                    <textarea
+                        name="favorite"
+                        id="favorite"
+                        placeholder="What's your favorite?"
+                    ></textarea>
                 </label>
 
                 <button id="update-button">Update Profile</button>
