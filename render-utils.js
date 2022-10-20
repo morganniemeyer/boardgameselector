@@ -97,13 +97,12 @@ export function renderProfile(profile) {
     p.classList.add('bio-display');
     p.textContent = profile.bio;
 
-    const avatar = document.createElement('img');
-    avatar.classList.add('avatar-profile');
-    avatar.src = profile.avatar;
-
     textBox.append(h1, p);
 
-    if (avatar.image_url) {
+    const avatar = document.createElement('img');
+    avatar.classList.add('avatar-profile');
+    if (profile.avatar.length > 95) {
+        avatar.src = profile.avatar;
         profileBox.append(textBox, avatar);
     } else {
         avatar.src = '../assets/default.jpg';
