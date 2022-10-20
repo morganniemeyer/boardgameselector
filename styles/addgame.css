@@ -90,3 +90,6 @@ button {
 button:hover {
     background-color: #1a8be2;
 }
+.preview {
+    max-width: 350px;
+}
