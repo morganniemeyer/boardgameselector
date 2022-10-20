@@ -1,3 +1,5 @@
+import { deleteFromPersonalLibrary } from './fetch-utils.js';
+
 export function renderGameCard(game) {
     const li = document.createElement('li');
     li.classList.add('gamecard');
@@ -100,7 +102,51 @@ export function renderProfile(profile) {
     avatar.src = profile.avatar;
 
     textBox.append(h1, p);
-    profileBox.append(textBox, avatar);
 
+    if (avatar.image_url) {
+        profileBox.append(textBox, avatar);
+    } else {
+        avatar.src = '../assets/default.jpg';
+        profileBox.append(textBox, avatar);
+    }
     return profileBox;
+}
+
+export function renderProfileGameCard(game, id) {
+    const li = document.createElement('li');
+    li.classList.add('gamecard');
+
+    const a = document.createElement('a');
+    a.href = `/game-detail/?id=${game.id}`;
+
+    const h1 = document.createElement('h1');
+    h1.classList.add('game-title');
+    h1.textContent = game.title;
+
+    const pcount = document.createElement('p');
+    pcount.classList.add('player-range');
+    pcount.textContent = `${game.min_players} to ${game.max_players} players`;
+
+    const ptype = document.createElement('ol');
+    for (const type of game.type) {
+        const typeEl = document.createElement('li');
+        typeEl.textContent = type;
+        typeEl.classList.add('game-type');
+        ptype.append(typeEl);
+    }
+
+    const img = document.createElement('img');
+    img.classList.add('game-box');
+    img.src = game.image;
+
+    const button = document.createElement('button');
+    button.textContent = 'Remove From My GameStack';
+    button.addEventListener('click', async () => {
+        await deleteFromPersonalLibrary(game, id);
+        location.reload();
+    });
+
+    a.append(h1, pcount, ptype, img);
+    li.append(a, button);
+    return li;
 }

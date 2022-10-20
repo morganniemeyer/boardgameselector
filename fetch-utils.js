@@ -60,6 +60,10 @@ export async function gameToPersonalLibrary(game) {
     return await client.from('user_lib').insert(game).single();
 }
 
+export async function deleteFromPersonalLibrary(game, id) {
+    return await client.from('user_lib').delete().single().match({ game_id: game.id, user_id: id });
+}
+
 export async function getGames() {
     return await client.from('games').select('*');
 }
@@ -80,8 +84,4 @@ export async function getGamesByQuery(title) {
 
 export async function getSingleGame(id) {
     return await client.from('games').select().eq('id', id).single();
-}
-
-export async function getSingleFromPersonal(id) {
-    return await client.from('user_library').select().eq('id', id).single();
 }
