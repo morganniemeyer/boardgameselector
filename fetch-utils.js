@@ -53,8 +53,9 @@ export async function getProfile(id) {
     return await client.from('profiles').select().eq('user_id', id).single();
 }
 
-export async function gameToLibrary(game) {
-    return await client.from('games').upsert(game).single();
+export async function gameToLibrary(game, id) {
+    const response = await client.from('games').upsert(game).single().eq('id', id);
+    console.log(response);
 }
 export async function gameToPersonalLibrary(game) {
     return await client.from('user_lib').insert(game).single();
