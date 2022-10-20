@@ -15,7 +15,7 @@
 
 main {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     gap: 60px;
 }
 
@@ -57,6 +57,11 @@ button:hover {
     text-align: center;
     font-weight: 700;
     font-size: x-large;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .avatar-profile {
