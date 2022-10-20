@@ -102,8 +102,13 @@ export function renderProfile(profile) {
     avatar.src = profile.avatar;
 
     textBox.append(h1, p);
-    profileBox.append(textBox, avatar);
 
+    if (avatar.image_url) {
+        profileBox.append(textBox, avatar);
+    } else {
+        avatar.src = '../assets/default.jpg';
+        profileBox.append(textBox, avatar);
+    }
     return profileBox;
 }
 
