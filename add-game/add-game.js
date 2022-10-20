@@ -1,14 +1,24 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
-import { uploadImage, gameToLibrary } from '../fetch-utils.js';
+import { uploadImage, gameToLibrary, getSingleGame } from '../fetch-utils.js';
+
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const form = document.getElementById('game-form');
 const imageInput = document.getElementById('image-input');
 const preview = document.getElementById('image-preview');
+const title = document.getElementById('title');
+const minPlayer = document.getElementById('min-players');
+const maxPlayer = document.getElementById('max-players');
+const time = document.getElementById('time');
+const complexity = document.getElementById('complexity');
+const rules = document.getElementById('rules-link');
+const aesthetic = document.getElementById('aesthetic');
+
 /* State */
 let error = null;
+let game = {};
 /* Events */
 // image input event listener
 imageInput.addEventListener('change', () => {
@@ -21,6 +31,29 @@ imageInput.addEventListener('change', () => {
 });
 
 // create game form
+window.addEventListener('load', async () => {
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get('id');
+    const response = await getSingleGame(id);
+    error = response.error;
+    game = response.data;
+    if (error) {
+        displayError();
+    }
+
+    if (response) {
+        title.value = game.title;
+        minPlayer.value = game.min_players;
+        maxPlayer.value = game.max_players;
+        time.value = game.time;
+        complexity.value = game.complexity;
+        rules.value = game.rules;
+        aesthetic.value = game.aesthetic;
+
+        preview.src = game.image;
+    }
+});
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 

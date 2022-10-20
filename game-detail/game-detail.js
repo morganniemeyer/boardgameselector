@@ -10,6 +10,7 @@ const bigCard = document.getElementById('big-gamecard');
 const titleTop = document.getElementById('site-top');
 const titleGame = document.getElementById('title-header');
 const libAdd = document.getElementById('add-to-lib');
+const gameEdit = document.getElementById('edit-game');
 
 /* State */
 let error = null;
@@ -54,6 +55,12 @@ libAdd.addEventListener('click', async () => {
     }
 
     location.replace('../profile/');
+});
+
+gameEdit.addEventListener('click', async () => {
+    const searchParams = new URLSearchParams(location.search);
+    const gameId = searchParams.get('id');
+    location.replace(`/add-game/?id=${gameId}`);
 });
 
 /* Display Functions */
