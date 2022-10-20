@@ -1,6 +1,8 @@
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
+    justify-content: space-around;
+    justify-items: center;
+    min-height: fit-content + 10px;
 }

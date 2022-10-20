@@ -65,20 +65,37 @@ export function renderBigCard(game) {
         ptype.append(typeEl);
     }
 
-    const img = document.createElement('img');
-    img.classList.add('game-box');
-    img.src = game.image;
+    if (game.image.length > 95) {
+        const img = document.createElement('img');
+        img.classList.add('game-box');
+        img.src = game.image;
 
-    if (game.rules) {
-        const rules = document.createElement('a');
-        rules.classList.add('rules-link');
-        rules.textContent = 'Rules Link';
-        rules.href = game.rules;
-        div.append(h1, img, pcount, ptime, pcomp, rules, paest, ptype);
-        return div;
+        if (game.rules) {
+            const rules = document.createElement('a');
+            rules.classList.add('rules-link');
+            rules.textContent = 'Rules Link';
+            rules.href = game.rules;
+            div.append(h1, img, pcount, ptime, pcomp, rules, paest, ptype);
+            return div;
+        } else {
+            div.append(h1, img, pcount, ptime, pcomp, paest, ptype);
+            return div;
+        }
     } else {
-        div.append(h1, img, pcount, ptime, pcomp, paest, ptype);
-        return div;
+        const img = document.createElement('img');
+        img.classList.add('game-box');
+        img.src = '/assets/meeple-noBG.png';
+        if (game.rules) {
+            const rules = document.createElement('a');
+            rules.classList.add('rules-link');
+            rules.textContent = 'Rules Link';
+            rules.href = game.rules;
+            div.append(h1, pcount, ptime, pcomp, rules, paest, ptype);
+            return div;
+        } else {
+            div.append(h1, pcount, ptime, pcomp, paest, ptype);
+            return div;
+        }
     }
 }
 
@@ -97,13 +114,12 @@ export function renderProfile(profile) {
     p.classList.add('bio-display');
     p.textContent = profile.bio;
 
-    const avatar = document.createElement('img');
-    avatar.classList.add('avatar-profile');
-    avatar.src = profile.avatar;
-
     textBox.append(h1, p);
 
-    if (avatar.image_url) {
+    const avatar = document.createElement('img');
+    avatar.classList.add('avatar-profile');
+    if (profile.avatar.length > 95) {
+        avatar.src = profile.avatar;
         profileBox.append(textBox, avatar);
     } else {
         avatar.src = '../assets/default.jpg';

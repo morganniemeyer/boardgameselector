@@ -195,6 +195,26 @@
                             />
                         </label>
 
+                        <label for="asymmetric">
+                            Asymmetric
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="asymmetric"
+                                value=" asymmetric"
+                            />
+                        </label>
+
+                        <label for="guessing">
+                            Guessing
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="guessing"
+                                value=" guessing"
+                            />
+                        </label>
+
                         <label for="drafting"
                             >Drafting
                             <input
@@ -242,6 +262,16 @@
                                 name="game-type"
                                 id="party-game"
                                 value=" party game"
+                            />
+                        </label>
+
+                        <label for="dexterity"
+                            >Dexterity
+                            <input
+                                type="checkbox"
+                                name="game-type"
+                                id="dexterity"
+                                value=" dexterity"
                             />
                         </label>
 
@@ -345,9 +375,14 @@
 
                     <!-- Image Upload Area -->
                     <div class="image-area">
-                        <input type="file" name="image-input" id="image-input" required />
+                        <input type="file" name="image-input" id="image-input" />
                     </div>
-                    <img src="../assets/meeple.png" id="image-preview" alt="" class="preview" />
+                    <img
+                        src="../assets/meeple-noBG.png"
+                        id="image-preview"
+                        alt=""
+                        class="preview"
+                    />
                     <!-- Submit button -->
                     <button id="submit" class="submit">Submit</button>
                 </section>

@@ -73,3 +73,6 @@ button:hover {
     display: flex;
     justify-content: space-around;
 }
+img {
+    object-fit: contain;
+}
