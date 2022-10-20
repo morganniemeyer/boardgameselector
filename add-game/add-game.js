@@ -19,6 +19,8 @@ const aesthetic = document.getElementById('aesthetic');
 /* State */
 let error = null;
 let game = {};
+let boxArray = [];
+
 /* Events */
 // image input event listener
 imageInput.addEventListener('change', () => {
@@ -41,6 +43,10 @@ window.addEventListener('load', async () => {
         displayError();
     }
 
+    for (let i = 6; i < 28; i++) {
+        boxArray.push(form.elements[i]);
+    }
+
     if (response) {
         title.value = game.title;
         minPlayer.value = game.min_players;
@@ -49,8 +55,15 @@ window.addEventListener('load', async () => {
         complexity.value = game.complexity;
         rules.value = game.rules;
         aesthetic.value = game.aesthetic;
-
         preview.src = game.image;
+
+        for (const type of game.type) {
+            for (const input of boxArray) {
+                if (type === input.value) {
+                    input.checked = true;
+                }
+            }
+        }
     }
 });
 
