@@ -94,7 +94,7 @@ form.addEventListener('submit', async (e) => {
                 aesthetic: formData.get('aesthetic'),
                 image: url,
             };
-            const response = gameToLibrary(game, game.id);
+            const response = await gameToLibrary(game, game.id);
             error = response.error;
         }
         if (!game.id) {
@@ -127,7 +127,7 @@ form.addEventListener('submit', async (e) => {
                 aesthetic: formData.get('aesthetic'),
                 image: game.image,
             };
-            const response = gameToLibrary(game, game.id);
+            const response = await gameToLibrary(game, game.id);
             error = response.error;
         }
         if (!game.id) {
