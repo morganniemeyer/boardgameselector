@@ -80,38 +80,71 @@ form.addEventListener('submit', async (e) => {
         const randomFolder = Math.floor(Date.now() * Math.random());
         const imagePath = `post/${randomFolder}/${imageFile.name}`;
         url = await uploadImage('bucket2', imagePath, imageFile);
-    }
 
-    if (game.id) {
-        game = {
-            id: game.id,
-            title: formData.get('title'),
-            min_players: formData.get('min-players'),
-            max_players: formData.get('max-players'),
-            rules: formData.get('rules'),
-            time: formData.get('time'),
-            complexity: formData.get('complexity'),
-            type: formData.getAll('game-type'),
-            aesthetic: formData.get('aesthetic'),
-            image: game.image ? game.image : url,
-        };
-        const response = gameToLibrary(game, game.id);
-        error = response.error;
-    }
-    if (!game.id) {
-        let newGame = {
-            title: formData.get('title'),
-            min_players: formData.get('min-players'),
-            max_players: formData.get('max-players'),
-            rules: formData.get('rules'),
-            time: formData.get('time'),
-            complexity: formData.get('complexity'),
-            type: formData.getAll('game-type'),
-            aesthetic: formData.get('aesthetic'),
-        };
+        if (game.id) {
+            game = {
+                id: game.id,
+                title: formData.get('title'),
+                min_players: formData.get('min-players'),
+                max_players: formData.get('max-players'),
+                rules: formData.get('rules'),
+                time: formData.get('time'),
+                complexity: formData.get('complexity'),
+                type: formData.getAll('game-type'),
+                aesthetic: formData.get('aesthetic'),
+                image: url,
+            };
+            const response = gameToLibrary(game, game.id);
+            error = response.error;
+        }
+        if (!game.id) {
+            let newGame = {
+                title: formData.get('title'),
+                min_players: formData.get('min-players'),
+                max_players: formData.get('max-players'),
+                rules: formData.get('rules'),
+                time: formData.get('time'),
+                complexity: formData.get('complexity'),
+                type: formData.getAll('game-type'),
+                aesthetic: formData.get('aesthetic'),
+                image: url,
+            };
 
-        const response = await gameToLibrary(newGame);
-        error = response.error;
+            const response = await gameToLibrary(newGame);
+            error = response.error;
+        }
+    } else {
+        if (game.id) {
+            game = {
+                id: game.id,
+                title: formData.get('title'),
+                min_players: formData.get('min-players'),
+                max_players: formData.get('max-players'),
+                rules: formData.get('rules'),
+                time: formData.get('time'),
+                complexity: formData.get('complexity'),
+                type: formData.getAll('game-type'),
+                aesthetic: formData.get('aesthetic'),
+                image: game.image,
+            };
+            const response = gameToLibrary(game, game.id);
+            error = response.error;
+        }
+        if (!game.id) {
+            let newGame = {
+                title: formData.get('title'),
+                min_players: formData.get('min-players'),
+                max_players: formData.get('max-players'),
+                rules: formData.get('rules'),
+                time: formData.get('time'),
+                complexity: formData.get('complexity'),
+                type: formData.getAll('game-type'),
+                aesthetic: formData.get('aesthetic'),
+            };
+
+            const response = await gameToLibrary(newGame);
+            error = response.error;
+        }
     }
 
     if (error) {
