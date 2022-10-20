@@ -136,8 +136,9 @@ export function renderProfileGameCard(game, id) {
 
     const button = document.createElement('button');
     button.textContent = 'Remove From My GameStack';
-    button.addEventListener('click', () => {
-        deleteFromPersonalLibrary(game, id);
+    button.addEventListener('click', async () => {
+        await deleteFromPersonalLibrary(game, id);
+        location.reload();
     });
 
     a.append(h1, pcount, ptype, img);

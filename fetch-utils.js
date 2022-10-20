@@ -61,11 +61,7 @@ export async function gameToPersonalLibrary(game) {
 }
 
 export async function deleteFromPersonalLibrary(game, id) {
-    return await client
-        .from('user_lib')
-        .delete()
-        .single()
-        .match({ game_id: game.id, user_id: id });
+    return await client.from('user_lib').delete().single().match({ game_id: game.id, user_id: id });
 }
 
 export async function getGames() {
