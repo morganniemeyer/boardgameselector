@@ -5,4 +5,5 @@ main {
     justify-content: space-around;
     justify-items: center;
     min-height: fit-content + 10px;
+    align-content: center;
 }
