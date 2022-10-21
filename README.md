@@ -4,7 +4,7 @@ GameStack is a virtual library of boardgames where a user can make a profile and
 
 # The Dev Team
 
--   Morgan Niemeyer | [GitHub](https://github.com/morganniemeyer) [LinkedIn](https://github.com/morganniemeyer)
+-   Morgan Niemeyer | [GitHub](https://github.com/morganniemeyer) [LinkedIn](https://www.linkedin.com/in/morganniemeyer/)
 -   Sam Adams | [GitHub](https://github.com/soup1e) [LinkedIn](https://www.linkedin.com/in/samsadams)
 -   Tom Booth | [GitHub](https://github.com/TomABooth) [LinkedIn](https://www.linkedin.com/in/booth-tom/)
 -   Charlie Hengemihle | [GitHub](https://github.com/CharlieHengemihle) [LinkedIn](https://www.linkedin.com/in/charliehengemihle)
