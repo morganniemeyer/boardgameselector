@@ -49,7 +49,7 @@ window.addEventListener('load', async () => {
         boxArray.push(form.elements[i]);
     }
 
-    if (response) {
+    if (game) {
         title.value = game.title;
         minPlayer.value = game.min_players;
         maxPlayer.value = game.max_players;
@@ -81,7 +81,7 @@ form.addEventListener('submit', async (e) => {
         const imagePath = `post/${randomFolder}/${imageFile.name}`;
         url = await uploadImage('bucket2', imagePath, imageFile);
 
-        if (game.id) {
+        if (game) {
             game = {
                 id: game.id,
                 title: formData.get('title'),
@@ -97,7 +97,7 @@ form.addEventListener('submit', async (e) => {
             const response = await gameToLibrary(game, game.id);
             error = response.error;
         }
-        if (!game.id) {
+        if (!game) {
             let newGame = {
                 title: formData.get('title'),
                 min_players: formData.get('min-players'),
@@ -114,7 +114,7 @@ form.addEventListener('submit', async (e) => {
             error = response.error;
         }
     } else {
-        if (game.id) {
+        if (game) {
             game = {
                 id: game.id,
                 title: formData.get('title'),
@@ -130,7 +130,7 @@ form.addEventListener('submit', async (e) => {
             const response = await gameToLibrary(game, game.id);
             error = response.error;
         }
-        if (!game.id) {
+        if (!game) {
             let newGame = {
                 title: formData.get('title'),
                 min_players: formData.get('min-players'),
